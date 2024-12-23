@@ -20,7 +20,7 @@ Then follow the steps below to configure the example.
    - If using a supported development board, follow the [steps](../../../../docs/How_To_Use.md#using-supported-development-boards) to configure it.
    - If using a custom board, follow the [steps](../../../../docs/How_To_Use.md#using-custom-development-boards) to configure it.
 
-2. Copy the [ui](./libraries/ui/) folder from `libraries` to [Arduino Library directory](../../../../README.md#where-is-the-directory-for-arduino-libraries).
+2. Copy the [ui](./libraries/ui/) folder from `libraries` to [Arduino Library directory](../../../../README.md#where-is-the-directory-for-arduino-libraries).Here I have put ui into the libraries.
 
 3. For **lvgl**:
 
