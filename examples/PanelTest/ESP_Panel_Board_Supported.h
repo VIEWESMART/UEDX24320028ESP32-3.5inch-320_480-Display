@@ -118,7 +118,7 @@
 // #define BOARD_VIEWE_ESP_S3_Touch_LCD_24  
 // #define BOARD_VIEWE_ESP_S3_Touch_LCD_28 
 // #define BOARD_VIEWE_ESP_S3_Touch_LCD_35_V1     //The resolution is 240*320
-// #define BOARD_VIEWE_ESP_S3_Touch_LCD_35_V2     //The resolution is 320*480
+#define BOARD_VIEWE_ESP_S3_Touch_LCD_35_V2     //The resolution is 320*480
 // #define BOARD_VIEWE_ESP_S3_Touch_LCD_40
 // #define BOARD_VIEWE_ESP_S3_Touch_LCD_43_V1     //The resolution is 800*480
 // #define BOARD_VIEWE_ESP_S3_Touch_LCD_43_V2     //The resolution is 480*272
