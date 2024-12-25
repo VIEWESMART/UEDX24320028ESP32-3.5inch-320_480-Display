@@ -3,17 +3,30 @@
 The example demonstrates how to develop built-in or custom development boards using the `ESP_Panel` driver and tests by displaying color bars and printing touch point coordinates.
 
 ## How to Use
+### Dependencies and Versions
 
+| **Dependency** | **Version** |
+| -------------- | ----------- |
+| [arduino-esp32](https://github.com/espressif/arduino-esp32) | >= v3.0.0-alpha3 |
+| [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) | >= 0.1.0 && < 0.2.0 |
+| [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| > 0.2.1 |
+
+### Installing arduino-esp32
+For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](./How_To_Configure_Arduino-esp32.md#install-esp32).
+
+### Installing the Library
 Follow the steps below to configure:
 
 1. For **ESP32_Display_Panel**:
+   
+    `Note`:Since the latest version is still being updated and has not been released, please temporarily use the test version in this repository: `Libraries`->[`ESP32_Display_Panel`](https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/tree/main/Libraries/ESP32_Display_Panel).
 
     - Follow the [steps](https://github.com/VIEWESMART/VIEWE-FAQ/tree/main/Arduino-FAQ/English/How_To_Use.md#configuring-drivers) to configure drivers if needed.
     - If using a supported development board, follow the [steps](https://github.com/VIEWESMART/VIEWE-FAQ/tree/main/Arduino-FAQ/English/How_To_Use.md#using-supported-development-boards) to configure it.
     - If using a custom board, follow the [steps](https://github.com/VIEWESMART/VIEWE-FAQ/tree/main/Arduino-FAQ/English/How_To_Use.md#using-custom-development-boards) to configure it.
-
-3. Navigate to the `Tools` menu in the Arduino IDE to choose a ESP board and configure its parameters. For supported boards, please refter to [Configuring Supported Development Boards](https://github.com/VIEWESMART/VIEWE-FAQ/tree/main/Arduino-FAQ/English/How_To_Use.md#configuring-supported-development-boards)
-4. Verify and upload the example to your ESP board.
+    
+2. Navigate to the `Tools` menu in the Arduino IDE to choose a ESP board and configure its parameters. For supported boards, please refter to [Configuring Supported Development Boards](https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/blob/main/README.md#esp32-s3)
+3. Verify and upload the example to your ESP board.
 
 ## Serial Output
 
