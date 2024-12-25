@@ -3,15 +3,6 @@
 The example demonstrates how to port LVGL(v8). And for RGB LCD, it can enable the avoid tearing function.
 
 ## How to Use
-### Dependencies and Versions
-
-| **Dependency** | **Version** |
-| -------------- | ----------- |
-| [arduino-esp32](https://github.com/espressif/arduino-esp32) | > v3.0.0 |
-| [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) | >= 0.1.0 && < 0.2.0 |
-| [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| > 0.2.1 |
-| [lvgl](https://lvgl.io) | = 8.4.0 |
-
 ### Installing arduino-esp32
 For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](./How_To_Configure_Arduino-esp32.md#install-esp32).
 
@@ -19,6 +10,8 @@ For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Ard
 To use this example, please firstly install the following dependent libraries:
 
 - lvgl (>= v8.3.9, < v9)
+- ESP32_Display_Panel (> 0.2.1)
+- ESP32_IO_Expander (>= 0.1.0 && < 0.2.0)
 
 Follow the steps below to configure:
 
