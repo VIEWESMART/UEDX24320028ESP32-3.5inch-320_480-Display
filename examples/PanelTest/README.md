@@ -3,19 +3,14 @@
 The example demonstrates how to develop built-in or custom development boards using the `ESP_Panel` driver and tests by displaying color bars and printing touch point coordinates.
 
 ## How to Use
-### Dependencies and Versions
-
-| **Dependency** | **Version** |
-| -------------- | ----------- |
-| [arduino-esp32](https://github.com/espressif/arduino-esp32) | > v3.0.0 |
-| [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) | >= 0.1.0 && < 0.2.0 |
-| [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)| > 0.2.1 |
-
 ### Installing arduino-esp32
-For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](./How_To_Configure_Arduino-esp32.md#install-esp32).
+For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](https://github.com/VIEWESMART/VIEWE-FAQ/blob/main/Arduino-FAQ/English/How_To_Configure_Arduino-esp32.md#install-esp32).
 
 ### Installing the Library
-Follow the steps below to configure:
+To use this example, please firstly install the following dependent libraries:
+
+- ESP32_Display_Panel (> 0.2.1)
+- ESP32_IO_Expander (>= 0.1.0 && < 0.2.0)
 
 1. For **ESP32_Display_Panel**:
    
@@ -28,7 +23,24 @@ Follow the steps below to configure:
 2. For **ESP32_IO_Expander**:
    - Just install it directly.
            
-3. Navigate to the `Tools` menu in the Arduino IDE to choose a ESP board and configure its parameters. For supported boards, please refter to [Configuring Supported Development Boards](https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/blob/main/README.md#esp32-s3)
+3. Navigate to the `Tools` menu in the Arduino IDE to choose a ESP board and configure its parameters. 
+    | Setting                               | Value                                 |
+    | :-------------------------------: | :-------------------------------: |
+    | Board                                 | ESP32S3 Dev Module           |
+    | CPU Frequency                   | 240MHz (WiFi)                    |
+    | Core Debug Level                | None                                 |
+    | USB CDC On Boot                | Disabled                              |
+    | USB DFU On Boot                | Disabled                             |
+    | Events Run On                     | Core 1                               |  
+    | Flash Mode                         | QIO 80MHz                         |
+    | Flash Size                           | 16MB (128Mb)                    |
+    | Arduino Runs On                  | Core 1                               |
+    | USB Firmware MSC On Boot | Disabled                             |
+    | Partition Scheme                | 16M Flash (3MB APP/9.9MB FATFS) |
+    | PSRAM                                | OPI PSRAM                         |
+    | Upload Mode                     |     UART0/Hardware CDC            |
+    | Upload Speed                     | 921600                               |
+    | USB Mode                           | Hardware CDC and JTAG     |
 4. Verify and upload the example to your ESP board.
 5. If burning fails Please hold down the "BOOT" button and try downloading the program again.
 
