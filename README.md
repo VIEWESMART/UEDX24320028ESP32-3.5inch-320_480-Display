@@ -104,7 +104,7 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | Board                                 | ESP32S3 Dev Module           |
 | CPU Frequency                   | 240MHz (WiFi)                    |
 | Core Debug Level                | None                                 |
-| USB CDC On Boot                | Enabled                              |
+| USB CDC On Boot                | Disabled                              |
 | USB DFU On Boot                | Disabled                             |
 | Events Run On                     | Core 1                               |  
 | Flash Mode                         | QIO 80MHz                         |
@@ -152,14 +152,20 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | SDA         | IO1       |
 | SCL         | IO3       |
 
-| Power Chip Pin  | ESP32S3 Pin|
+| USB (CH340C) Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| SDA         | IO7       |
-| SCL         | IO6       |
+| D+(USB-DP)    | IO20       |
+| D-(USB-DN)    | IO19       |
 
-| Battery Measurement Pin  | ESP32S3 Pin|
+| USB (CH340C) Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| BATTERY_VOLTAGE_ADC_DATA         | IO4       |
+| D+         | IO20       |
+| D-         | IO19       |
+
+| button Pin  | ESP32S3 Pin|
+| :------------------: | :------------------:|
+|   boot    | IO0       |
+|   reset   | chip-en   |
 
 | SD Card Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
@@ -168,11 +174,20 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | MOSI        | IO17       |
 | MISO         | IO16       |
 
+| UART Pin  | ESP32S3 Pin|
+| :------------------: | :------------------:|
+| UARTTX         | IO43(RXD0)      |
+| UARTRX         | IO44(TXD0)      |
+
+| RGB LED Pin  | ESP32S3 Pin|
+| :------------------: | :------------------:|
+| RGB LED         | IO0(Not Used)   |
+
 
 ## FAQ
 
 * Q. After reading the above tutorials, I still don't know how to build a programming environment. What should I do?
-* A. If you still don't understand how to build an environment after reading the above tutorials, you can refer to the [LilyGo-Document](https://github.com/Xinyuan-LilyGO/LilyGo-Document) document instructions to build it.
+* A. If you still don't understand how to build an environment after reading the above tutorials, you can refer to the [VIEWE-FAQ]() document instructions to build it.
 
 <br />
 
@@ -187,25 +202,19 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 <br />
 
 * Q. Why is my board continuously failing to download the program?
-* A. Please hold down the "BOOT-0" button and try downloading the program again.
+* A. Please hold down the "BOOT" button and try downloading the program again.
 
 ## Project
-* [T-Display-S3-AMOLED-1.43_V1.0](./project/T-Display-S3-AMOLED-1.43_V1.0.pdf)
 
 ## Information
-* [FT3168](./information/FT3168.pdf)
-* [PCF8563](./information/PCF8563.pdf)
-* [SH8601](./information/SH8601Z.pdf)
-* [DO0143FAT01](./information/SPEC-DO0143FAT01-20230830.pdf)
-* [AN_SY6970](./information/AN_SY6970.pdf)
-* [EVB_SY6970](./information/EVB_SY6970.pdf)
+
 
 ## DependentLibraries
-* [Arduino_GFX-1.3.7](https://github.com/moononournation/Arduino_GFX)
-* [Arduino_DriveBus-1.1.12](https://github.com/Xk-w/Arduino_DriveBus)
-* [JPEGDEC-1.2.8](https://github.com/bitbank2/JPEGDEC)
-* [lvgl-8.3.5](https://lvgl.io)
-* [MiniTV](https://github.com/moononournation/MiniTV)
-* [SensorLib](https://github.com/lewisxhe/SensorsLib)
+* [ESP32_Display_Panel](https://github.com/esp-arduino-libs/ESP32_Display_Panel)
+* [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander)
+* [NTPClient-3.2.1](https://github.com/bitbank2/JPEGDEC)
+* [ArduinoJson-6.21.3](https://github.com/bblanchon/ArduinoJson.git)
+* [lvgl-8.4.0](https://lvgl.io)
+
 
 
