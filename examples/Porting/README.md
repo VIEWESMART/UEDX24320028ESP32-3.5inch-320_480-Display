@@ -4,7 +4,7 @@ The example demonstrates how to port LVGL(v8). And for RGB LCD, it can enable th
 
 ## How to Use
 ### Installing arduino-esp32
-For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](./How_To_Configure_Arduino-esp32.md#install-esp32).
+For installation of the esp32 in the Arduino IDE, refer to [How_To_Configure_Arduino-esp32](https://github.com/VIEWESMART/VIEWE-FAQ/blob/main/Arduino-FAQ/English/How_To_Configure_Arduino-esp32.md#install-esp32).
 
 ### Installing the Library
 To use this example, please firstly install the following dependent libraries:
@@ -31,9 +31,26 @@ Follow the steps below to configure:
     - Follow the [steps](https://github.com/VIEWESMART/VIEWE-FAQ/blob/main/Arduino-FAQ/English/FAQ.md#how-to-add-an-lvgl-library-and-how-to-configure) to add *lv_conf.h* file and change the configurations.
     - Modify the macros in the [lvgl_port_v8.h](./lvgl_port_v8.h) file to configure the LVGL porting parameters.
 
-4. Navigate to the `Tools` menu in the Arduino IDE to choose a ESP board and configure its parameters. For supported boards, please refter to [Configuring Supported Development Boards](https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/blob/main/README.md#esp32-s3)
-5. Verify and upload the example to your ESP board.
-6. If burning fails Please hold down the "BOOT" button and try downloading the program again.
+4. Navigate to the `Tools` menu in the Arduino IDE to choose a ESP board and configure its parameters.
+    | Setting                               | Value                                 |
+    | :-------------------------------: | :-------------------------------: |
+    | Board                                 | ESP32S3 Dev Module           |
+    | CPU Frequency                   | 240MHz (WiFi)                    |
+    | Core Debug Level                | None                                 |
+    | USB CDC On Boot                | Disabled                              |
+    | USB DFU On Boot                | Disabled                             |
+    | Events Run On                     | Core 1                               |  
+    | Flash Mode                         | QIO 80MHz                         |
+    | Flash Size                           | 16MB (128Mb)                    |
+    | Arduino Runs On                  | Core 1                               |
+    | USB Firmware MSC On Boot | Disabled                             |
+    | Partition Scheme                | 16M Flash (3MB APP/9.9MB FATFS) |
+    | PSRAM                                | OPI PSRAM                         |
+    | Upload Mode                     |     UART0/Hardware CDC            |
+    | Upload Speed                     | 921600                               |
+    | USB Mode                           | Hardware CDC and JTAG     |
+6. Verify and upload the example to your ESP board.
+7. If burning fails Please hold down the "BOOT" button and try downloading the program again.
 
 ## Serial Output
 
