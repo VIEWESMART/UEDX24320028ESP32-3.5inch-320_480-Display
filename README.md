@@ -210,8 +210,8 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 
 
 ## DependentLibraries
-* [ESP32_Display_Panel>0.2.1](https://github.com/esp-arduino-libs/ESP32_Display_Panel) (Please download the library first as the latest version has not been released yet)
-* [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) (Please download the library first as the latest version has not been released yet)
+* [ESP32_Display_Panel>0.2.1](https://github.com/esp-arduino-libs/ESP32_Display_Panel) (Please [download](./Libraries/ESP32_Display_Panel) the library first as the latest version has not been released yet)
+* [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) (Please [download](./Libraries/ESP32_IO_Expander) the library first as the latest version has not been released yet)
 * [NTPClient-3.2.1](https://github.com/bitbank2/JPEGDEC)
 * [ArduinoJson-6.21.3](https://github.com/bblanchon/ArduinoJson.git)
 * [lvgl-8.4.0](https://lvgl.io)
