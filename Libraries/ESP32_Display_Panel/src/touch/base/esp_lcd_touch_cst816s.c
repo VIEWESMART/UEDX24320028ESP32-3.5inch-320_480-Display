@@ -129,30 +129,30 @@ static esp_err_t read_data(esp_lcd_touch_handle_t tp)
     // portEXIT_CRITICAL(&tp->data.lock);
 
     /*chsc6540*/
-    // uint8_t buf[15]={0};
-    // uint8_t touch_num=0;
-    // uint16_t x=0;
-    // uint16_t y=0;
-    // uint8_t  gc=0;//报点过程
-    //  ESP_RETURN_ON_ERROR(i2c_read_bytes(tp, DATA_START_REG, buf, sizeof(buf)), TAG, "I2C read failed");
-
-    // point.num=buf[2];
-
-    // gc=buf[3]>>4;
-
-    // x= (uint16_t)(((buf[3]&0x0F)<<8)+buf[4]);
-    // y= (uint16_t)(((buf[5]&0x0F)<<8)+buf[6]);
-
-    /*CST820 */
-    uint8_t lvalue[15]={0};
-    uint8_t gesture_id=0;
+    uint8_t buf[15]={0};
+    uint8_t touch_num=0;
     uint16_t x=0;
     uint16_t y=0;
-    ESP_RETURN_ON_ERROR(i2c_read_bytes(tp, DATA_START_REG, (uint8_t *)lvalue, sizeof(lvalue)), TAG, "I2C read failed");
-    gesture_id =  lvalue[1];
-    point.num  =lvalue[2];
-    x = (((uint16_t)(lvalue[3]&0x0f))<<8) | lvalue[4];
-    y = (((uint16_t)(lvalue[5]&0x0f))<<8) | lvalue[6];
+    uint8_t  gc=0;//
+     ESP_RETURN_ON_ERROR(i2c_read_bytes(tp, DATA_START_REG, buf, sizeof(buf)), TAG, "I2C read failed");
+
+    point.num=buf[2];
+
+    gc=buf[3]>>4;
+
+    x= (uint16_t)(((buf[3]&0x0F)<<8)+buf[4]);
+    y= (uint16_t)(((buf[5]&0x0F)<<8)+buf[6]);
+
+    /*CST820 */
+    // uint8_t lvalue[15]={0};
+    // uint8_t gesture_id=0;
+    // uint16_t x=0;
+    // uint16_t y=0;
+    // ESP_RETURN_ON_ERROR(i2c_read_bytes(tp, DATA_START_REG, (uint8_t *)lvalue, sizeof(lvalue)), TAG, "I2C read failed");
+    // gesture_id =  lvalue[1];
+    // point.num  =lvalue[2];
+    // x = (((uint16_t)(lvalue[3]&0x0f))<<8) | lvalue[4];
+    // y = (((uint16_t)(lvalue[5]&0x0f))<<8) | lvalue[6];
 
 
     portENTER_CRITICAL(&tp->data.lock);

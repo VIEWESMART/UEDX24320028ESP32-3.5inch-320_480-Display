@@ -44,7 +44,7 @@
     /* viewe */ \
     + defined(BOARD_UEDX24240013_MD50E) \
     + defined(BOARD_VIEWE_ESP_S3_Touch_LCD_19) \
-    + defined(BOARD_VIEWE_ESP_S3_Knob_LCD_21) \
+    + defined(BOARD_UEDX48480021_MD80E) \
     + defined(BOARD_UEDX48480021_MD80ET) \
     + defined(BOARD_VIEWE_ESP_S3_Touch_LCD_24) \
     + defined(BOARD_VIEWE_ESP_S3_Touch_LCD_28) \
@@ -121,7 +121,7 @@
 /* viewe */
 #elif defined(BOARD_UEDX24240013_MD50E)
     #include "board/viewe/UEDX24240013-MD50E.h"
-#elif defined(BOARD_VIEWE_ESP_S3_Knob_LCD_21)
+#elif defined(BOARD_UEDX48480021_MD80E)
     #include "board/viewe/viewe_panel_48480021.h"
 #elif defined(BOARD_UEDX48480021_MD80ET)
     #include "board/viewe/UEDX48480021-MD80ET.h"
