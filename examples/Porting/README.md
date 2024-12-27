@@ -1,4 +1,4 @@
-# LVGL Porting Example
+# LVGL Porting Example(Arduino IDE)
 
 The example demonstrates how to port LVGL(v8). And for RGB LCD, it can enable the avoid tearing function.
 
