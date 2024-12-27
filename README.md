@@ -157,11 +157,6 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | D+(USB-DP)    | IO20       |
 | D-(USB-DN)    | IO19       |
 
-| USB (CH340C) Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-| D+         | IO20       |
-| D-         | IO19       |
-
 | button Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 |   boot    | IO0       |
@@ -182,6 +177,11 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | RGB LED Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 | RGB LED         | IO0(Not Used)   |
+
+| Buzzer Pin  | ESP32S3 Pin|
+| :------------------: | :------------------:|
+|   buzzer    | IO38  |
+
 
 
 ## FAQ
