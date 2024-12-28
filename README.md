@@ -169,7 +169,7 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | MOSI        | IO17       |
 | MISO         | IO16       |
 
-| UART Pin  | ESP32S3 Pin|
+| UART/RS485 Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 | UARTTX         | IO43(RXD0)      |
 | UARTRX         | IO44(TXD0)      |
