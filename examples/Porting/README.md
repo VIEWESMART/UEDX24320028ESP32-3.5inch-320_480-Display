@@ -49,8 +49,8 @@ Follow the steps below to configure:
     | Upload Mode                     |     UART0/Hardware CDC            |
     | Upload Speed                     | 921600                               |
     | USB Mode                           | Hardware CDC and JTAG     |
-6. Verify and upload the example to your ESP board.
-7. If burning fails Please hold down the "BOOT" button and try downloading the program again.
+5. Verify and upload the example to your ESP board.
+6. If burning fails Please hold down the "BOOT" button and try downloading the program again.
 
 ## Serial Output
 

@@ -75,9 +75,9 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | Example | Support IDE And Version| Description | Picture |
 | ------  | ------  | ------ | ------ | 
 | [ESP-IDF](./examples/ESP-IDF) | `[ESP-IDF V5.1/5.2/5.3]` | idf driver example code |  |
-| [PanelTest](./examples/PanelTest) |`[Arduino IDE][esp32_v2.0.14]` | Product factory original testing |  |
-| [Porting](./examples/Porting) | `[Arduino IDE][esp32_v3.0 above]` | LVGL example code |  |
-| [WiFiClock](./examples/WiFiClock) | `[Arduino IDE][esp32_v2.0.14]` | SquareLine porting example for Arduino |  |
+| [PanelTest](./examples/PanelTest) |`[Arduino IDE][>=esp32_v3.0.6]` | Product factory original testing |  |
+| [Porting](./examples/Porting) | `[Arduino IDE][>=esp32_v3.0.6]` | LVGL example code |  |
+| [WiFiClock](./examples/WiFiClock) | `[Arduino IDE][>=esp32_v3.0.6]` | SquareLine porting example for Arduino |  |
 | [PlatformIO](./examples/PlatformIO) | `[Platformio IDE]` |  |  |
 
 
@@ -87,6 +87,7 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | [PanelTest](./firmware/[T-Display-S3-AMOLED-1.43_V1.0][Light_Sleep_Wake_Up]_firmware_V1.0.0.bin) | Original |  |
 | [Porting](./firmware/[T-Display-S3-AMOLED-1.43_V1.0][Deep_Sleep_Wake_Up]_firmware_V1.0.0.bin) | Original |  |
 | [WiFiClock](./firmware/[T-Display-S3-AMOLED-1.75_V1.0][Original_Test_H0175Y003AM]_firmware_V1.0.2.bin) | Original |  |
+
 
 ### PlatformIO
 1. Install[VisualStudioCode](https://code.visualstudio.com/Download),Choose installation based on your system type.
@@ -235,8 +236,9 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 [CH340C](information/C84681_USB%20Conversion%20chip_CH340C_specification_WJ1187874.PDF)
 
 ## DependentLibraries
-* [ESP32_Display_Panel>0.2.1](https://github.com/esp-arduino-libs/ESP32_Display_Panel) (Please [download](./Libraries/ESP32_Display_Panel) the library first as the latest version has not been released yet)
-* [ESP32_IO_Expander](https://github.com/esp-arduino-libs/ESP32_IO_Expander) (Please [download](./Libraries/ESP32_IO_Expander) the library first as the latest version has not been released yet)
+* [ESP32_Display_Panel>=1.0.0](https://github.com/esp-arduino-libs/ESP32_Display_Panel) 
+* [ESP32_IO_Expander>=1.0.1](https://github.com/esp-arduino-libs/ESP32_IO_Expander)
+* [esp-lib-utils>=0.1.0 && <0.2.0](https://github.com/esp-arduino-libs/esp-lib-utils)
 * [NTPClient-3.2.1](https://github.com/bitbank2/JPEGDEC)
 * [ArduinoJson-6.21.3](https://github.com/bblanchon/ArduinoJson.git)
 * [lvgl-8.4.0](https://lvgl.io)
