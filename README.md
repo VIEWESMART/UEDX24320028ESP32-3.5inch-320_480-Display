@@ -88,6 +88,7 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 | [Porting](./firmware/[T-Display-S3-AMOLED-1.43_V1.0][Deep_Sleep_Wake_Up]_firmware_V1.0.0.bin) | Original |  |
 | [WiFiClock](./firmware/[T-Display-S3-AMOLED-1.75_V1.0][Original_Test_H0175Y003AM]_firmware_V1.0.2.bin) | Original |  |
 
+
 ### PlatformIO
 1. Install[VisualStudioCode](https://code.visualstudio.com/Download),Choose installation based on your system type.
 
