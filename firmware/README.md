@@ -1,3 +1,4 @@
+# [中文说明](https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/blob/main/firmware/README_CN.md)
 # Folder Description
 
 This folder mainly stores the burned firmware so that everyone can verify the functions, etc.
