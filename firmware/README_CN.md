@@ -17,7 +17,7 @@
   
 注意：此开发板未连接 SD 卡检测模块，不存在 SD 卡检测程序。若不插入 SD 卡或没有建立对应的目录，设备将会重启。
 
-2. portig_lvgl_h35.bin
+## 2. portig_lvgl_h35.bin
 此固件包含一个 lvgl 演示示例程序，程序相关图片如下：
 
 <p align="center" width="80%">
