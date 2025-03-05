@@ -9,13 +9,14 @@
 ## Introduction to the Repository Directory
 
 ```
-├── Libraries                 Library files required for the Arduino example  
-├── Schematic                 The circuit schematic of the product   
-├── examples                  Sample files, including the IDF framework and the Arduino framework
-├── image                     Product or sample project related images
-├── information               Product specifications, including the IC or peripherals involved
-├── tools                     Burn tool and image conversion tool
-└── README.md                 This is the file you are currently reading,Give a brief introduction to the product
+├── Libraries              Library files required for the Arduino example  
+├── Schematic              The circuit schematic of the product   
+├── examples               Sample files, including the IDF framework and the Arduino framework
+├── firmware               firmware
+├── image                  Product or sample project related images
+├── information            Product specifications, including the IC or peripherals involved
+├── tools                  Burn tool and image conversion tool
+└── README.md              This is the file you are currently reading,Give a brief introduction to the product
 ```
 
 ## Version iteration:
@@ -74,19 +75,19 @@ UEDX24320028ESP32-3.5inch-320_480-Display is a development board with square 3.5
 
 | Example | Support IDE And Version| Description | Picture |
 | ------  | ------  | ------ | ------ | 
-| [ESP-IDF](./examples/ESP-IDF) | `[ESP-IDF V5.1/5.2/5.3]` | idf driver example code |  |
-| [PanelTest](./examples/PanelTest) |`[Arduino IDE][>=esp32_v3.0.6]` | Product factory original testing |  |
-| [Porting](./examples/Porting) | `[Arduino IDE][>=esp32_v3.0.6]` | LVGL example code |  |
-| [WiFiClock](./examples/WiFiClock) | `[Arduino IDE][>=esp32_v3.0.6]` | SquareLine porting example for Arduino |  |
-| [PlatformIO](./examples/PlatformIO) | `[Platformio IDE]` |  |  |
+| [esp32_lvgl_Simulate_IOS](./examples/esp_idf/esp32_lvgl_Simulate_IOS) | `[ESP-IDF V5.1/5.2/5.3]` | smiulate ios example code |  |
+| [UEDX24320028E-3_5-320_480](./examples/esp_idf/UEDX24320028E-3_5-320_480) | `[ESP-IDF V5.1/5.2/5.3]` | lvgl demo example code |  |
+| [simple_port](./examples/arduino/gui/lvgl_v8/simple_port) |`[Arduino IDE][>=esp32_v3.0.6]` |  |  |
+| [simple_rotation](./examples/arduino/gui/lvgl_v8/simple_port) | `[Arduino IDE][>=esp32_v3.0.6]` |  |  |
+| [squareline_wifi_clock](./examples/arduino/gui/lvgl_v8/squareline_port) | `[Arduino IDE][>=esp32_v3.0.6]` | SquareLine porting example for Arduino |  |
+| [squareline_wifi_clock](./examples/arduino/gui/lvgl_v8/squareline_wifi_clock) | `[Arduino IDE][>=esp32_v3.0.6]` | SquareLine porting example for Arduino |  |
+| [PlatformIO](./examples/platformio/lvgl_v8_port) | `[Platformio IDE]` |  |  |
 
 
 | Firmware | Description | Picture |
 | ------  | ------  | ------ |
-| [ESP-IDF](./firmware/[T-Display-S3-AMOLED-1.43_V1.0][Original_Test]_firmware_V1.0.0.bin) | Original |  |
-| [PanelTest](./firmware/[T-Display-S3-AMOLED-1.43_V1.0][Light_Sleep_Wake_Up]_firmware_V1.0.0.bin) | Original |  |
-| [Porting](./firmware/[T-Display-S3-AMOLED-1.43_V1.0][Deep_Sleep_Wake_Up]_firmware_V1.0.0.bin) | Original |  |
-| [WiFiClock](./firmware/[T-Display-S3-AMOLED-1.75_V1.0][Original_Test_H0175Y003AM]_firmware_V1.0.2.bin) | Original |  |
+| [portig_lvgl_h35.bin](./firmware/portig_lvgl_h35.bin) | Original |  |
+| [lvgl_smiulate_ios.bin](./firmware/lvgl_smiulate_ios.bin) | smiulate ios |  |
 
 
 ### PlatformIO

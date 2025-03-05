@@ -1,10 +1,8 @@
-|支持的目标 |ESP32 系列 |ESP32-C2 系列 |ESP32-C3 系列 |ESP32-S2 系列 |ESP32-S3 系列 |
-|----------------- |----- |-------- |-------- |-------- |-------- |
+|支持的目标 |ESP32-S3 UEDX32480035E-WB-A系列 |
+|-----------------|-------- |
 
-# _Sample project_
-
-这是最简单的可构建示例。该示例由命令 'idf.py create-project' 使用
-将项目复制到用户指定的路径并设置其名称。有关更多信息，请关注 [文档页面]（https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project）
+# 项目说明
+1.
 
 ## 如何使用示例
 电量显示是接收其他芯片通过串口发送的电量。
