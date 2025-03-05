@@ -1,3 +1,5 @@
+# [English](https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/blob/main/firmware/README.md)
+
 # 文件夹说明
 
 本文件夹主要用于存放烧录固件，方便大家对相关功能进行验证。
