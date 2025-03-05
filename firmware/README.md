@@ -11,7 +11,7 @@ This is a UI interface that emulates IOS. We have implemented several functions 
 * Create two folders named `music` and `nes\rom` in the SD card. The music folder is used to store mp3 files, and the.nes game files should be directly placed under the nes\rom folder. The download address of the mini-games:
   
   <p align="center" width="80%">
-    <img src="https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/blob/main/image/smiulate_ios.jpg" alt="">
+    <img src="https://github.com/VIEWESMART/UEDX24320028ESP32-3.5inch-320_480-Display/blob/main/image/smiulate_ios.png" alt="">
   </p>
   
 * For the weather function, the area code can be adjusted manually. Find the corresponding area code setting item in the code. After setting, the system will display the weather conditions of the corresponding area by default.
