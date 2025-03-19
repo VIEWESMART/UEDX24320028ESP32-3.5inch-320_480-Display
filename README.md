@@ -107,17 +107,25 @@
     * Edit the `esp_panel_board_supported_conf.h` file.
     * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
     * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX80480070E_WB_A`
-6. Configure tool options (S3):
-   
-    | Setting                               | Value                         |
-    | :-------------------------------: | :-------------------------------: |
-    | Board                                 | ESP32S3 Dev Module            |
-    | Core Debug Level                | None                                |
-    | USB CDC On Boot                | Disabled                             |
-    | USB DFU On Boot                | Disabled                             |
-    | Flash Size                           | 16MB (128Mb)                   |
-    | Partition Scheme                | 16M Flash (3MB APP/9.9MB FATFS)     |
-    | PSRAM                                | OPI PSRAM                      |
+6. Select the correct settings in the Tools menu, as shown in the table below:
+#### ESP32-S3
+| Setting                               | Value                                 |
+| :-------------------------------: | :-------------------------------: |
+| Board                                 | ESP32S3 Dev Module           |
+| CPU Frequency                   | 240MHz (WiFi)                    |
+| Core Debug Level                | None                                 |
+| USB CDC On Boot                | Disabled                              |
+| USB DFU On Boot                | Disabled                             |
+| Events Run On                     | Core 1                               |  
+| Flash Mode                         | QIO 80MHz                         |
+| Flash Size                           | 16MB (128Mb)                    |
+| Arduino Runs On                  | Core 1                               |
+| USB Firmware MSC On Boot | Disabled                             |
+| Partition Scheme                | 16M Flash (3MB APP/9.9MB FATFS) |
+| PSRAM                                | OPI PSRAM                         |
+| Upload Mode                     |     UART0/Hardware CDC            |
+| Upload Speed                     | 921600                               |
+| USB Mode                           | Hardware CDC and JTAG     |
    
 7. Select the correct port.
 8. Click "<kbd>[√](image/8.png)</kbd>" in the upper right corner to compile,If the compilation is correct, connect the microcontroller to the computer,Click "<kbd>[→](image/9.png)</kbd>" in the upper right corner to download.
