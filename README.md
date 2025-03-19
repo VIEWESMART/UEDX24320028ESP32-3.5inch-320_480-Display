@@ -39,8 +39,8 @@
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
 | UEDX24320028E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-3-5-inch-320x480-mcu-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module/)  |
 
-## Module
 
+## Hardware Overview
 ### 1.MCU
 
 * Chip: ESP32-S3-R8
@@ -62,6 +62,17 @@
 * Chip: CHSC6540
 * Bus communication protocol: IIC
 * For more details：[Touch IC Datasheet_EN](information/DS_CHSC6540_V1.0%20Datasheet.pdf)
+
+## Hardware Connections
+- Connect the screen ribbon cable and touch ribbon cable (gold contacts 
+ facing up).
+- USB-C power supply (5V/1A adapter).
+- UART for programming, debugging, or power supply (5V/1A adapter).
+- For the first programming, press and hold the `BOOT` button to enter 
+ download mode.
+<p align="center" width="100%">
+    <img src="image/overview.png" alt="example">
+</p>
 
 ## QuickStart
 
