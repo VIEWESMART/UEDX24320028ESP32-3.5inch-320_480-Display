@@ -179,7 +179,7 @@
 
 ## 电路图
 <div align="center" width="100%">
-    <img src="Schematic/UEDX80480070E-WB-A%20V1.1%20sch.png" alt="电路图">
+    <img src="Schematic/UEDX24320028E-WB-A%20V1.1%20sch.png" alt="电路图">
 </div>
 
 ## 技术资料
