@@ -1,7 +1,7 @@
 <h1 align = "center">VIEWE ESP32-S3智能显示屏快速指南</h1>
 
 <div align="center">
-    <img src="image/7inch.jpg" alt="7英寸显示屏">
+    <img src="image/2.8.jpg" alt="2.8英寸显示屏">
     <h1 style="font-size: 18px;">型号: UEDX80480070E-WB-A</h1>
 </div>
 
@@ -17,6 +17,7 @@
 - [技术资料](#技术资料)
 - [固件下载](#固件下载)
 - [常见问题](#常见问题)
+- [技术指导](#技术指导)
 
 ## 仓库目录说明
 
@@ -36,7 +37,7 @@
 
 | 产品                     | 主控芯片     | 闪存   | PSRAM   | 购买链接                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
+| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-2-8-inch-240x320-mcu-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module/)  |
 
 ## 硬件概述
 
@@ -47,20 +48,20 @@
 - 详细资料: [Espressif ESP32-S3数据手册](https://www.espressif.com.cn/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2.显示屏
-- 尺寸: 7英寸IPS屏
-- 分辨率: 800x480px
+- 尺寸: 2.8英寸IPS屏
+- 分辨率: 240x320px
 - 屏幕类型: IPS
-- 驱动芯片: EK9716BD3+EK73002AB2
-- 兼容库: ESP32_Display_Panel
-- 总线协议: RGB
-- 详细资料：[屏幕数据手册](information/ALL-UE070WV-RB40-A092A.pdf)
+- 驱动芯片: GC9307
+- 兼容库: ESP32_Display_Panel (>= 1.0.0)
+- 总线协议: SPI
+- 详细资料：[屏幕数据手册](information/UE028QV-RB40-A058A.pdf)
 
 注：型号由屏幕尺寸和分辨率决定
 
 ### 3.触摸模块
-- 芯片: GT911
+- 芯片: CHSC6540
 - 总线协议: IIC
-- 详细资料：[触摸IC数据手册](information/GT911_CN_Datasheet.pdf)
+- 详细资料：[触摸IC数据手册](information/DS_CHSC6540_V1.0%20Datasheet.pdf)
 
 ## 硬件连接
 - 连接屏幕排线和触摸排线（金色触点朝上）
@@ -90,24 +91,31 @@
 1. 安装[Arduino](https://www.arduino.cc/en/software)
 2. 安装ESP32核心：在Board Manager中搜索下载`esp32`（版本>=v3.0.7）
 3. 安装依赖库：
-    * 搜索安装`ESP32_Display_Panel`（v1.0.0），自动安装依赖
+    * 搜索安装`ESP32_Display_Panel`（>= v1.0.0），它的依赖也要全部安装
     * 安装`LVGL`（v8.4.0）库
 4. 打开示例：`ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`
-5. 开发板配置：
-    * 编辑`esp_panel_board_supported_conf.h`
+5. 编辑`esp_panel_board_supported_conf.h`文件：
     * 启用宏定义: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * 取消注释屏幕型号定义: `#define BOARD_VIEWE_UEDX80480070E_WB_A`
+    * 取消注释屏幕的型号定义: `#define BOARD_VIEWE_UEDX24320028E_WB_A`
 6. 工具配置（S3）：
-
-    | 配置项                            | 值                                   |
-    | :-------------------------------: | :-------------------------------:    |
-    | 开发板                             | ESP32S3 Dev Module                   |
-    | Core Debug Level                  | None                                 |
-    | USB CDC On Boot                   | Disabled                             |
-    | USB DFU On Boot                   | Disabled                             |
-    | Flash Size                        | 16MB (128Mb)                         |
-    | Partition Scheme                  | 16M Flash (3MB APP/9.9MB FATFS)      |
-    | PSRAM                             | OPI PSRAM                            |
+    #### ESP32-S3
+    | Setting                               | Value                                 |
+    | :-------------------------------: | :-------------------------------: |
+    | Board                                 | ESP32S3 Dev Module           |
+    | CPU Frequency                   | 240MHz (WiFi)                    |
+    | Core Debug Level                | None                                 |
+    | USB CDC On Boot                | Disabled                              |
+    | USB DFU On Boot                | Disabled                             |
+    | Events Run On                     | Core 1                               |  
+    | Flash Mode                         | QIO 80MHz                         |
+    | Flash Size                           | 16MB (128Mb)                    |
+    | Arduino Runs On                  | Core 1                               |
+    | USB Firmware MSC On Boot | Disabled                             |
+    | Partition Scheme                | 16M Flash (3MB APP/9.9MB FATFS) |
+    | PSRAM                                | OPI PSRAM                         |
+    | Upload Mode                     |     UART0/Hardware CDC            |
+    | Upload Speed                     | 921600                               |
+    | USB Mode                           | Hardware CDC and JTAG     |
 
 7. 选择正确端口
 8. 点击右上角"<kbd>[√](image/8.png)</kbd>"编译，成功后连接设备，点击"<kbd>[→](image/9.png)</kbd>"下载
@@ -123,35 +131,20 @@
 
 | IPS屏幕引脚 | ESP32S3引脚 |
 |------------|------------|
-| DE         | IO40       |
-| VS         | IO41       |
-| HS         | IO439      |
-| PCLK       | IO42       |
-| R0         | IO45       |
-| R1         | IO48       |
-| R2         | IO47       |
-| R3         | IO21       |
-| R4         | IO14       |
-| G0         | IO5        |
-| G1         | IO6        |
-| G2         | IO7        |
-| G3         | IO15       |
-| G4         | IO16       |
-| G5         | IO4        |
-| B0         | IO8        |
-| B1         | IO3        |
-| B2         | IO46       |
-| B3         | IO9        |
-| B4         | IO1        |
-| RST        | IO39       |
-| BACKLIGHT  | IO2        |
+| CS         | IO42       |
+| SCK         | IO40       |
+| MOSI         | IO45       |
+| DC         | IO41       |
+| RST         | IO39       |
+| BACKLIGHT   | IO13       |
 
 | 触摸芯片引脚 | ESP32S3引脚 |
 |------------|------------|
-| RST        | IO38       |
-| INT        | IO18       |
-| SDA        | IO19       |
-| SCL        | IO20       |
+| RST         | IO2(Not Used)|
+| INT         | IO4(Not Used)|
+| SDA         | IO1       |
+| SCL         | IO3       |
+
 
 | USB(CH340C)引脚 | ESP32S3引脚 |
 |----------------|------------|
@@ -160,8 +153,8 @@
 
 | 按键引脚 | ESP32S3引脚 |
 |--------|------------|
-| BOOT   | IO0        |
-| RESET  | CHIP-EN    |
+| D+(USB-DP)    | IO20       |
+| D-(USB-DN)    | IO19       |
 
 | SD卡引脚 | ESP32S3引脚 |
 |--------|------------|
@@ -179,21 +172,26 @@
 |------------|------------|
 | RGB LED    | IO0        |
 
+| 蜂鸣器  | ESP32S3引脚|
+| :------------------: | :------------------:|
+|   buzzer    | IO38  |
+
+
 ## 电路图
 <div align="center" width="100%">
     <img src="Schematic/UEDX80480070E-WB-A%20V1.1%20sch.png" alt="电路图">
 </div>
 
 ## 技术资料
-[产品规格书](information/UEDX80480070E-WB-A%20V2.0%20SPEC.pdf)
+[产品规格书](information/UEDX24320024E-WB-A%20V1.0%20SPEC.pdf)
 
-[显示屏数据手册](information/ALL-UE070WV-RB40-A092A.pdf)
+[显示屏数据手册](information/UE028QV-RB40-A058A.pdf)
 
-[触摸IC英文手册](information/GT911_EN_Datasheet.pdf)
-
-[触摸IC中文手册](information/GT911_CN_Datasheet.pdf)
+[触摸IC手册](information/DS_CHSC6540_V1.0%20Datasheet.pdf)
 
 [5050RGB-LED规格书](information/C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
+
+[蜂鸣器](information/C7544813_Buzzer_HYG-8503A_specification_WJ436381.PDF)
 
 [CH340C芯片手册](information/C84681_USB%20Conversion%20chip_CH340C_specification_WJ1187874.PDF)
 
@@ -227,3 +225,8 @@
 
 * Q. 开发板持续下载失败怎么办？
 * A. 请按住"BOOT"键后重新尝试下载
+
+## 技术支持:
+- 邮箱: smartrd1@viewedisplay.com
+- 微信:
+  
