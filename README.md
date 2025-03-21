@@ -2,6 +2,7 @@
 
 <p align="center" width="80%">
     <img src="image/3.5_h.png" alt="">
+    <h1 style="font-size: 18px;">型号: UEDX32480035E-WB-A</h1>
 </p>
 
 * **[中文版](./README_CN.md)**
@@ -100,7 +101,7 @@
 | Support IDE | Version |
 | ------  | ------  |
 | `[ESP-IDF]` | `[V5.1/5.2/5.3]` |
-| `[Arduino IDE]` | `[esp32 >=v3.0.7]` | 
+| `[Arduino IDE]` | `[esp32 >=v3.0.9]` | 
 | `[Platformio IDE]` |  |
 ### ESP-IDF Framework ([Novice tutorial]())
 - Supported Versions: v5.1/5.2/5.3
@@ -114,29 +115,28 @@
     * Search and install `ESP32_Display_Panel` (>= v1.0.0). Select `Yes` for automatic dependency installation.
     * Install the `LVGL` (v8.4.0) library. 
 4. Open the example: `ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`.
-5. Configure the development board:
-    * Edit the `esp_panel_board_supported_conf.h` file.
+5. Configure the `esp_panel_board_supported_conf.h` file:
     * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
     * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX32480035E_WB_A`
 6. Select the correct settings in the Tools menu, as shown in the table below:
-#### ESP32-S3
-| Setting                               | Value                                 |
-| :-------------------------------: | :-------------------------------: |
-| Board                                 | ESP32S3 Dev Module           |
-| CPU Frequency                   | 240MHz (WiFi)                    |
-| Core Debug Level                | None                                 |
-| USB CDC On Boot                | Disabled                              |
-| USB DFU On Boot                | Disabled                             |
-| Events Run On                     | Core 1                               |  
-| Flash Mode                         | QIO 80MHz                         |
-| Flash Size                           | 16MB (128Mb)                    |
-| Arduino Runs On                  | Core 1                               |
-| USB Firmware MSC On Boot | Disabled                             |
-| Partition Scheme                | 16M Flash (3MB APP/9.9MB FATFS) |
-| PSRAM                                | OPI PSRAM                         |
-| Upload Mode                     |     UART0/Hardware CDC            |
-| Upload Speed                     | 921600                               |
-| USB Mode                           | Hardware CDC and JTAG     |
+    #### ESP32-S3
+    | Setting                               | Value                                 |
+    | :-------------------------------: | :-------------------------------: |
+    | Board                                 | ESP32S3 Dev Module           |
+    | CPU Frequency                   | 240MHz (WiFi)                    |
+    | Core Debug Level                | None                                 |
+    | USB CDC On Boot                | Disabled                              |
+    | USB DFU On Boot                | Disabled                             |
+    | Events Run On                     | Core 1                               |  
+    | Flash Mode                         | QIO 80MHz                         |
+    | Flash Size                           | 16MB (128Mb)                    |
+    | Arduino Runs On                  | Core 1                               |
+    | USB Firmware MSC On Boot | Disabled                             |
+    | Partition Scheme                | 16M Flash (3MB APP/9.9MB FATFS) |
+    | PSRAM                                | OPI PSRAM                         |
+    | Upload Mode                     |     UART0/Hardware CDC            |
+    | Upload Speed                     | 921600                               |
+    | USB Mode                           | Hardware CDC and JTAG     |
    
 7. Select the correct port.
 8. Click "<kbd>[√](image/8.png)</kbd>" in the upper right corner to compile,If the compilation is correct, connect the microcontroller to the computer,Click "<kbd>[→](image/9.png)</kbd>" in the upper right corner to download.
