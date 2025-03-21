@@ -1,8 +1,8 @@
 <h1 align = "center">VIEWE ESP32-S3智能显示屏快速指南</h1>
 
 <div align="center">
-    <img src="image/2.8.jpg" alt="2.8英寸显示屏">
-    <h1 style="font-size: 18px;">型号: UEDX80480070E-WB-A</h1>
+    <img src="image/3.5_h.png" alt="2.8英寸显示屏">
+    <h1 style="font-size: 18px;">型号: UEDX32480035E-WB-A</h1>
 </div>
 
 * **[English Version](./README.md)**
@@ -37,7 +37,7 @@
 
 | 产品                     | 主控芯片     | 闪存   | PSRAM   | 购买链接                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-2-8-inch-240x320-mcu-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module/)  |
+| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-3-5-inch-320x480-mcu-ips-tft-display-touch-screen-arduino-lvgl-wifi-ble-uart-smart-module/)  |
 
 ## 硬件概述
 
@@ -54,7 +54,7 @@
 - 驱动芯片: GC9307
 - 兼容库: ESP32_Display_Panel (>= 1.0.0)
 - 总线协议: SPI
-- 详细资料：[屏幕数据手册](information/UE028QV-RB40-A058A.pdf)
+- 详细资料：[屏幕数据手册](information/UE035HV-RB40-A118A.pdf)
 
 注：型号由屏幕尺寸和分辨率决定
 
@@ -79,7 +79,7 @@
 | 支持IDE       | 版本要求       |
 |--------------|--------------|
 | `[ESP-IDF]`  | `[V5.1/5.2/5.3]` |
-| `[Arduino IDE]` | `[esp32 >=v3.0.7]` |
+| `[Arduino IDE]` | `[esp32 >=v3.0.9]` |
 | `[Platformio IDE]` |  |
 
 ### ESP-IDF框架 ([新手教程]())
@@ -96,7 +96,7 @@
 4. 打开示例：`ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`
 5. 编辑`esp_panel_board_supported_conf.h`文件：
     * 启用宏定义: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * 取消注释屏幕的型号定义: `#define BOARD_VIEWE_UEDX24320028E_WB_A`
+    * 取消注释屏幕的型号定义: `#define BOARD_VIEWE_UEDX32480035E_WB_A`
 6. 工具配置（S3）：
     #### ESP32-S3
     | Setting                               | Value                                 |
@@ -183,9 +183,9 @@
 </div>
 
 ## 技术资料
-[产品规格书](information/UEDX24320024E-WB-A%20V1.0%20SPEC.pdf)
+[产品规格书](information/UEDX32480035E-WB-A%20V1.0%20SPEC.pdf)
 
-[显示屏数据手册](information/UE028QV-RB40-A058A.pdf)
+[显示屏数据手册](information/UE035HV-RB40-A118A.pdf)
 
 [触摸IC手册](information/DS_CHSC6540_V1.0%20Datasheet.pdf)
 
