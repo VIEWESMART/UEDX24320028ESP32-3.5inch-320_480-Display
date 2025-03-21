@@ -48,8 +48,8 @@
 - 详细资料: [Espressif ESP32-S3数据手册](https://www.espressif.com.cn/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2.显示屏
-- 尺寸: 2.8英寸IPS屏
-- 分辨率: 240x320px
+- 尺寸: 3.5英寸IPS屏
+- 分辨率: 320x480px
 - 屏幕类型: IPS
 - 驱动芯片: GC9307
 - 兼容库: ESP32_Display_Panel (>= 1.0.0)
