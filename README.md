@@ -1,9 +1,9 @@
 <h1 align = "center">VIEWE ESP32-S3 Smart Display Quick Guide</h1>
 
-<p align="center" width="80%">
+<div align="center">
     <img src="image/3.5_h.png" alt="">
     <h1 style="font-size: 18px;">型号: UEDX32480035E-WB-A</h1>
-</p>
+</div>
 
 * **[中文版](./README_CN.md)**
 
