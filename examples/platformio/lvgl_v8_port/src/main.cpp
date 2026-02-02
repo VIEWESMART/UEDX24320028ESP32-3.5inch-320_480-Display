@@ -13,7 +13,7 @@
 /* To use the built-in examples and demos of LVGL uncomment the includes below respectively.
  * You also need to copy `lvgl/examples` to `lvgl/src/examples`. Similarly for the demos `lvgl/demos` to `lvgl/src/demos`.
  */
-// #include <demos/lv_demos.h>
+#include <demos/lv_demos.h>
 // #include <examples/lv_examples.h>
 
 using namespace esp_panel::drivers;
@@ -54,21 +54,21 @@ void setup()
     /**
      * Create the simple labels
      */
-    lv_obj_t *label_1 = lv_label_create(lv_scr_act());
-    lv_label_set_text(label_1, "Hello World!");
-    lv_obj_set_style_text_font(label_1, &lv_font_montserrat_30, 0);
-    lv_obj_align(label_1, LV_ALIGN_CENTER, 0, -20);
-    lv_obj_t *label_2 = lv_label_create(lv_scr_act());
-    lv_label_set_text_fmt(
-        label_2, "ESP32_Display_Panel(%d.%d.%d)",
-        ESP_PANEL_VERSION_MAJOR, ESP_PANEL_VERSION_MINOR, ESP_PANEL_VERSION_PATCH
-    );
-    lv_obj_set_style_text_font(label_2, &lv_font_montserrat_16, 0);
-    lv_obj_align_to(label_2, label_1, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
-    lv_obj_t *label_3 = lv_label_create(lv_scr_act());
-    lv_label_set_text_fmt(label_3, "LVGL(%d.%d.%d)", LVGL_VERSION_MAJOR, LVGL_VERSION_MINOR, LVGL_VERSION_PATCH);
-    lv_obj_set_style_text_font(label_3, &lv_font_montserrat_16, 0);
-    lv_obj_align_to(label_3, label_2, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
+    // lv_obj_t *label_1 = lv_label_create(lv_scr_act());
+    // lv_label_set_text(label_1, "Hello World!");
+    // lv_obj_set_style_text_font(label_1, &lv_font_montserrat_30, 0);
+    // lv_obj_align(label_1, LV_ALIGN_CENTER, 0, -20);
+    // lv_obj_t *label_2 = lv_label_create(lv_scr_act());
+    // lv_label_set_text_fmt(
+    //     label_2, "ESP32_Display_Panel(%d.%d.%d)",
+    //     ESP_PANEL_VERSION_MAJOR, ESP_PANEL_VERSION_MINOR, ESP_PANEL_VERSION_PATCH
+    // );
+    // lv_obj_set_style_text_font(label_2, &lv_font_montserrat_16, 0);
+    // lv_obj_align_to(label_2, label_1, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
+    // lv_obj_t *label_3 = lv_label_create(lv_scr_act());
+    // lv_label_set_text_fmt(label_3, "LVGL(%d.%d.%d)", LVGL_VERSION_MAJOR, LVGL_VERSION_MINOR, LVGL_VERSION_PATCH);
+    // lv_obj_set_style_text_font(label_3, &lv_font_montserrat_16, 0);
+    // lv_obj_align_to(label_3, label_2, LV_ALIGN_OUT_BOTTOM_MID, 0, 10);
 
     /**
      * Try an example. Don't forget to uncomment header.
@@ -81,7 +81,7 @@ void setup()
      * Or try out a demo.
      * Don't forget to uncomment header and enable the demos in `lv_conf.h`. E.g. `LV_USE_DEMO_WIDGETS`
      */
-    // lv_demo_widgets();
+    lv_demo_widgets();
     // lv_demo_benchmark();
     // lv_demo_music();
     // lv_demo_stress();
