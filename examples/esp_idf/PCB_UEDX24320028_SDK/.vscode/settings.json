@@ -8,5 +8,9 @@
         "ui_events.h": "c",
         "lvgl.h": "c"
     },
-    "idf.adapterTargetName": "esp32s3"
+    "idf.adapterTargetName": "esp32s3",
+    "idf.currentSetup": "D:\\idf\\.espressif\\v5.5.4\\esp-idf",
+    "idf.customExtraVars": {},
+    "idf.portWin": "COM44",
+    "idf.flashType": "UART"
 }

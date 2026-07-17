@@ -17,7 +17,7 @@ static esp_lcd_touch_handle_t touch_handle = NULL;
 static lv_display_t *lvgl_disp = NULL;
 static lv_indev_t *lvgl_touch_indev = NULL;
 
-#if ST
+#if VIEWE_DISPLAY_320_480_3_5
 static const st7796_lcd_init_cmd_t lcd_init_cmds[] = {
 // {cmd, { data }, data_size, delay_ms}
     {0x11, (uint8_t []){0x00}, 0, 120},                           // 0x11 command, no data, 120ms delay
@@ -50,9 +50,8 @@ static const st7796_lcd_init_cmd_t lcd_init_cmds[] = {
 
     {0x2C, (uint8_t []){0x00}, 0, 0},
 };
-#elif GC
+#elif VIEWE_DISPLAY_240_320_2_4 || VIEWE_DISPLAY_240_320_3_5
 static const gc9a01_lcd_init_cmd_t lcd_init_cmds[] = {
-#if VIEWE_24_L35
 //  {cmd, { data }, data_size, delay_ms}
     {0xfe, (uint8_t []){0x00}, 0, 0},
     {0xef, (uint8_t []){0x00}, 0, 0},
@@ -96,8 +95,10 @@ static const gc9a01_lcd_init_cmd_t lcd_init_cmds[] = {
     {0x11, (uint8_t []){0x00}, 0, 100},  // delay_ms(120)
     {0x29, (uint8_t []){0x00}, 0, 0},
     {0x2c, (uint8_t []){0x00}, 0, 0},
+};
 
-#elif VIEWE_28
+#elif VIEWE_DISPLAY_240_320_2_8
+static const gc9a01_lcd_init_cmd_t lcd_init_cmds[] = {
     /*2.8inch*/
     {0xfe, (uint8_t []){0x00}, 0, 0},                            // 0xfe command, no data
     {0xfe, (uint8_t []){0x00}, 0, 0},                            // 0xfe command, no data
@@ -133,8 +134,6 @@ static const gc9a01_lcd_init_cmd_t lcd_init_cmds[] = {
     {0x11, NULL, 0, 120},                          // 0x11 command, no data, 120ms delay
     {0x29, NULL, 0, 0},                            // 0x29 command, no data
     {0x2c, NULL, 0, 0},                            // 0x2c command, no data
-
-#endif
 };
 #endif
 
@@ -159,10 +158,10 @@ esp_err_t app_lcd_init(void)
         .pin_bit_mask = 1ULL << EXAMPLE_PIN_NUM_IM0
     };
     ESP_ERROR_CHECK(gpio_config(&im0_gpio_config));
-#if ST
+#if VIEWE_DISPLAY_320_480_3_5
     ESP_ERROR_CHECK(gpio_set_level(EXAMPLE_PIN_NUM_IM0, EXAMPLE_PIN_NUM_IM_ON_LEVEL));
     ESP_ERROR_CHECK(gpio_set_level(EXAMPLE_PIN_NUM_IM1, EXAMPLE_PIN_NUM_IM_ON_LEVEL));
-#elif GC
+#else
     ESP_ERROR_CHECK(gpio_set_level(EXAMPLE_PIN_NUM_IM0, EXAMPLE_PIN_NUM_IM_OFF_LEVEL));
     ESP_ERROR_CHECK(gpio_set_level(EXAMPLE_PIN_NUM_IM1, EXAMPLE_PIN_NUM_IM_ON_LEVEL));
 #endif
@@ -192,35 +191,38 @@ esp_err_t app_lcd_init(void)
 
     ESP_LOGD(TAG, "Install LCD driver");
 
-    gc9a01_vendor_config_t vendor_config = {  // Uncomment these lines if use custom initialization commands
+#if VIEWE_DISPLAY_320_480_3_5
+    st7796_vendor_config_t vendor_config = {
         .init_cmds = lcd_init_cmds,
-    #if GC
-        .init_cmds_size = sizeof(lcd_init_cmds) / sizeof(gc9a01_lcd_init_cmd_t),
-    #elif ST
         .init_cmds_size = sizeof(lcd_init_cmds) / sizeof(st7796_lcd_init_cmd_t),
-    #endif
     };
+#else
+    gc9a01_vendor_config_t vendor_config = {
+        .init_cmds = lcd_init_cmds,
+        .init_cmds_size = sizeof(lcd_init_cmds) / sizeof(gc9a01_lcd_init_cmd_t),
+    };
+#endif
 
     const esp_lcd_panel_dev_config_t panel_config = {
         .reset_gpio_num = EXAMPLE_LCD_GPIO_RST,
         .color_space = EXAMPLE_LCD_COLOR_SPACE,
         .bits_per_pixel = EXAMPLE_LCD_BITS_PER_PIXEL,
-        .vendor_config = &vendor_config,            // Uncomment this line if use custom initialization commands
+        .vendor_config = &vendor_config,
     };
-#if GC
-    ESP_GOTO_ON_ERROR(esp_lcd_new_panel_gc9a01(lcd_io, &panel_config, &lcd_panel), err, TAG, "New panel failed");
-#elif ST
+#if VIEWE_DISPLAY_320_480_3_5
     ESP_GOTO_ON_ERROR(esp_lcd_new_panel_st7796(lcd_io, &panel_config, &lcd_panel), err, TAG, "New panel failed");
+#else
+    ESP_GOTO_ON_ERROR(esp_lcd_new_panel_gc9a01(lcd_io, &panel_config, &lcd_panel), err, TAG, "New panel failed");
 #endif
 
     esp_lcd_panel_reset(lcd_panel);
     esp_lcd_panel_init(lcd_panel);
     // esp_lcd_panel_swap_xy(lcd_panel, true);
     esp_lcd_panel_mirror(lcd_panel, true, false);
-#if GC
-    esp_lcd_panel_invert_color(lcd_panel, false);
-#elif ST
+#if VIEWE_DISPLAY_320_480_3_5
     esp_lcd_panel_invert_color(lcd_panel, true);
+#else
+    esp_lcd_panel_invert_color(lcd_panel, false);
 #endif
     esp_lcd_panel_disp_on_off(lcd_panel, true);
 
@@ -281,7 +283,7 @@ esp_err_t app_lvgl_init(void)
     /* Initialize LVGL */
     const lvgl_port_cfg_t lvgl_cfg = {
         .task_priority = 4,         /* LVGL task priority */
-        .task_stack = 7096,         /* LVGL task stack size */
+        .task_stack = 7096*2,         /* LVGL task stack size */
         .task_affinity = -1,        /* LVGL task pinned to core (-1 is no affinity) */
         .task_max_sleep_ms = 500,   /* Maximum sleep in LVGL task */
         .timer_period_ms = 5        /* LVGL timer tick period in ms */

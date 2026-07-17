@@ -27,19 +27,28 @@
 #include "lvgl.h"
 #include "lv_demos.h"
 
-//*************************************************** */
-#define GC 0   //2.4/2.8/3.5 low resolution set 1
-#define ST 1   //3.5 3.5inch high resolution set 1
-
-/*select board*/
-#if GC
-#define VIEWE_24_L35    0  //2.4inch Display and 3.5inch low resolution Display
-#define VIEWE_28        1  //2.8inch Display
-#elif ST
-#define VIEWE_H35       1  //3.5inch high resolution Display(320*480)
+#ifdef __cplusplus
+extern "C" {
 #endif
 
-#if ST
+/*select board - 只能选其一，将其中一个 VIEWE_DISPLAY_* 设为 1，其余设为 0 */
+
+#define VIEWE_DISPLAY_240_320_2_4    0  //2.4inch Display 
+#define VIEWE_DISPLAY_240_320_2_8    0  //2.8inch Display
+#define VIEWE_DISPLAY_240_320_3_5    0  //3.5inch low resolution Display
+#define VIEWE_DISPLAY_320_480_3_5    1  //3.5inch high resolution Display(320*480)
+
+#define VIEWE_DISPLAY_SELECTED_COUNT \
+    (VIEWE_DISPLAY_240_320_2_4 + VIEWE_DISPLAY_240_320_3_5 + \
+     VIEWE_DISPLAY_240_320_2_8 + VIEWE_DISPLAY_320_480_3_5)
+
+#if VIEWE_DISPLAY_SELECTED_COUNT > 1
+#error "只能选择一个屏幕型号，请仅将其中一个 VIEWE_DISPLAY_* 宏设置为 1，其余设为 0"
+#elif VIEWE_DISPLAY_SELECTED_COUNT == 0
+#error "请选择一个屏幕型号，将其中一个 VIEWE_DISPLAY_* 宏设置为 1"
+#endif
+
+#if VIEWE_DISPLAY_320_480_3_5
 /* LCD size */
 #define EXAMPLE_LCD_H_RES   (320)
 #define EXAMPLE_LCD_V_RES   (480)
@@ -55,7 +64,7 @@
 #define EXAMPLE_LCD_DRAW_BUFF_HEIGHT (80)
 #define EXAMPLE_LCD_BL_ON_LEVEL      (1)
 
-#elif GC
+#else
 /* LCD size */
 #define EXAMPLE_LCD_H_RES   (240)
 #define EXAMPLE_LCD_V_RES   (320)

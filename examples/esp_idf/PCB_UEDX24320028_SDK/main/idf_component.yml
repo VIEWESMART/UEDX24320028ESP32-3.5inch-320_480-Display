@@ -28,7 +28,6 @@ dependencies:
   espressif/esp_lcd_st7796:
     public: true
     version: '*'
-  idf: '>5.0.4,!=5.1.1'
   lvgl/lvgl:
     public: true
     version: "^9.2.0"
